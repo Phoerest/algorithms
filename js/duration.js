@@ -3,6 +3,7 @@
 	https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#parse-a-duration-string
 */
 function parseDurationString(input) {
+	if (typeof input !== 'string') return false;
 	//1, 2, 3, 4
 	const asciiWhitespace = [9, 10, 12, 13, 32];
 	const asciiDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
