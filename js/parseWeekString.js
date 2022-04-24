@@ -35,6 +35,7 @@ function parseWeekString(input) {
 	const week = parseInt(weekResult);
 	//8
 	const maxWeek = weeksInYear(year);
+	if (maxWeek === false) return false;
 	//9
 	if (
 		week < 1 ||
@@ -61,6 +62,7 @@ function getWeekNumber(d) {
 
 function weeksInYear(year) {
 	const d = new Date(year, 11, 31);
+	if (d === 'Invalid Date') return false;
 	const week = getWeekNumber(d)[1];
 	return week == 1 ? 52 : week;
 }
