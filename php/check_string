@@ -2,9 +2,9 @@
 /*
 Usage:
 $string = [
-	'content' => 'Enter string here...', //(Required)(string) content to be checked
-	'max' => 25, //(Optional)(integer) max length allowed
-	'min' => 25, //(Optional)(integer) minlength allowed
+	'content' => 'Enter string here...',	//(Required)(string) content to be checked
+	'max' => 25,				//(Optional)(integer) max length allowed
+	'min' => 25,				//(Optional)(integer) minlength allowed
 ];
 
 returns a string on success, false on fail.
@@ -18,6 +18,11 @@ function check_string($string) {
 		ctype_space($string['content']) === true //Check if string is only whitespaces
 	) return false;
 
+	if (
+		!isset($string['max']) &&
+		!isset($string['min'])
+	) return $string['content'];
+	
 	$string_length = strlen($string['content']);
 	if (
 		isset($string['max']) &&
@@ -39,11 +44,7 @@ function check_string($string) {
 		isset($string['max']) &&
 		$string_length <= $string['max']
 	) return $string['content'];
-
-	if (
-		!isset($string['max']) &&
-		!isset($string['min'])
-	) return $string['content'];
+	
 	return false;
 }
 ?>
