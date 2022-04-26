@@ -2,10 +2,10 @@
 /*
 Usage:
 $string = [
-	'content' => 'Enter string text here...', //(required)(string) content to be checked
-	'length' => 10,                   //(Optional)(integer) length to compare string to
-	'max' => 10,                      //(Optional)(integer) max length allowed
-	'min' => 0,                       //(Optional)(integer) minlength allowed
+	'content' => 'Enter string text here...',	//(Required)(string) content to be checked
+	'length' => 10,					//(Optional)(integer) length to compare string to
+	'max' => 10,					//(Optional)(integer) max length allowed
+	'min' => 0					//(Optional)(integer) minlength allowed
 ];
 */
 function check_string($string) {
