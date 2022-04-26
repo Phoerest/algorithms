@@ -13,7 +13,7 @@ function check_string($string) {
 		return false;
 
 	if (
-		gettype($string->content) !== 'string' &&
+		gettype($string->content) !== 'string' ||
 		ctype_space($string->content) === true //Check if string is only whitespaces
 	) return false;
 
